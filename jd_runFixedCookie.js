@@ -24,7 +24,7 @@ console.log('jd_runFixedCookie.js::', `fileName=${fileName}, fixedCookies=${fixe
     console.error(error)
   }
 
-  let codeScript = 'node  ' + fileName
+  let codeScript = 'node ' + fileName
   await runScript(codeScript)
 })();
 
