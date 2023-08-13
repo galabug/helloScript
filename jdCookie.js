@@ -75,7 +75,7 @@ if(Array.isArray(thisCookies)&&thisCookies.length>0){
     let startIndex = indexArr[0]
     let endIndex = indexArr[1]
     CookieJDs = CookieJDs.slice(startIndex, endIndex)
-    console.log('\x1B[32m%s\x1B[0m','跑cookie->[', startIndex, '-', endIndex, ']')
+    console.log('跑cookie->[', startIndex, '-', endIndex, ']')
   }
   // let ccArr = []
   for (let i = 0; i < CookieJDs.length; i++) {
@@ -89,7 +89,7 @@ if(Array.isArray(thisCookies)&&thisCookies.length>0){
 }
 
 
-console.log(`========= 从${dirName}/0config/myCookies.js中获取${count}/${allCookie.length}个京东账号Cookie ========= `);
+console.log(`========= 获取${count}/${allCookie.length}个京东账号Cookie ========= `);
 
 
 
