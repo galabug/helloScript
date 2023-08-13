@@ -9,6 +9,7 @@ const dirName = path.parse(dirPath).name
 此文件为Node.js专用。其他用户请忽略
  */
 //此处填写京东账号cookie。
+let myCookies = ''
 
 
 let CookieJDs = [
@@ -23,7 +24,6 @@ if (process.env.JD_COOKIE) {
     CookieJDs = [process.env.JD_COOKIE];
   }
 }else{
-  let myCookies = ''
   try {
     myCookies = require('./0config/myCookies.js').myCookies
   } catch (error) {
@@ -44,7 +44,7 @@ if (JSON.stringify(process.env).indexOf('GITHUB') > -1) {
   })()
 }
 CookieJDs = [...new Set(CookieJDs.filter(item => !!item))]
-
+let allCookie = CookieJDs
 
 console.log('jdCookie.js >> process.env.RUN_COOKIE_ARR=',process.env.RUN_COOKIE_ARR)
 let thisCookies = ''
@@ -89,11 +89,7 @@ if(Array.isArray(thisCookies)&&thisCookies.length>0){
 }
 
 
-console.log(
-'\x1B[33m%s\x1B[0m',
-`========= 从${dirName}/0config/myCookies.js中获取${count}/${myCookies.length}个京东账号Cookie ========= `
-);
-
+console.log(`========= 从${dirName}/0config/myCookies.js中获取${count}/${allCookie.length}个京东账号Cookie ========= `);
 
 
 
