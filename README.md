@@ -13,7 +13,7 @@ jd_runFileWithParam.js jd_car_exc.js jd_car_play_exchangeid 10082bd15b4703
 ### jd_runCookiesInterval
 
 node jd_runCookiesInterval jd_jrsign 10 20
-node jd_runCookiesInterval jd_mpdz_car 4 0.2
+node jd_runCookiesInterval jd_mpdz_car 4 0.2 RUN_COOKIE_ARR
 
 ### jd_runFixedCookie
 
