@@ -7,17 +7,21 @@ console.log('jd_runFixedCookie.js::', `fileName=${fileName}, fixedCookies=${fixe
 
 (async () => {
   if (!fileName) {
-    console.log( '第1个参数未传入要执行的文件')
+    console.log('第1个参数未传入要执行的文件')
     return
   }
   if (!fixedCookies) {
-    console.log( '第2个参数未传入fixedCookies')
+    console.log('第2个参数未传入fixedCookies')
   }
   try {
     // process.env.RUN_COOKIE_ARR = JSON.parse('"'+fixedCookies+'"')
-    process.env.RUN_COOKIE_ARR = fixedCookies
-    if (!fixedCookies || !Array.isArray(JSON.parse(fixedCookies))) {
-      console.log( '第2个参数fixedCookies不是数组= ' + fixedCookies)
+    const numTONumPattern = /^\d+-\d+$/;
+    if (numTONumPattern.test(fixedCookies)) {
+      process.env.COOKE_INDEX = fixedCookies
+    } else if (fixedCookies && Array.isArray(JSON.parse(fixedCookies))) {
+      process.env.RUN_COOKIE_ARR = fixedCookies
+    } else {
+      console.log('第2个参数fixedCookies 格式有误 = ' + fixedCookies)
       return
     }
   } catch (error) {
@@ -30,10 +34,14 @@ console.log('jd_runFixedCookie.js::', `fileName=${fileName}, fixedCookies=${fixe
 
 
 async function runScript(code) {
-  console.log('jd_runFixedCookie.js::', code, process.env.RUN_COOKIE_ARR)
-  exec(code, async function (error, stdout, stderr) {
-    stdout && console.log(`stdout: ${stdout}`);
-    error && console.log(`error: ${error}`);
-    stderr && console.log(`stderr: ${stderr}`);
+  console.log('jd_runFixedCookie.js::', code, process.env.COOKE_INDEX, process.env.RUN_COOKIE_ARR)
+  return new Promise((resolve) => {
+    exec(code, async function (error, stdout, stderr) {
+      stdout && console.log(`stdout: ${stdout}`);
+      error && console.log(`error: ${error}`);
+      stderr && console.log(`stderr: ${stderr}`);
+      resolve()
+    });
   });
+
 }
