@@ -34,7 +34,7 @@ console.log('jd_runFileWithParam.js::', `fileName=${fileName}, p_key=${p_key}, p
   }
 
   process.env[p_key] = p_value
-  let codeScript = 'node  ' + __dirname + '\\' + fileName
+  let codeScript = 'node  ' + fileName
   await runScript(codeScript)
 })();
 

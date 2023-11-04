@@ -23,7 +23,7 @@ if (process.env.JD_COOKIE) {
   } else {
     CookieJDs = [process.env.JD_COOKIE];
   }
-}else{
+} else {
   try {
     myCookies = require('./0config/myCookies.js').myCookies
   } catch (error) {
@@ -33,7 +33,7 @@ if (process.env.JD_COOKIE) {
     // 0config/myCookies.js文件里的配置优先,不想用配置文件UNUSE_CONFIG配置true
     // console.log(`====================从${dirName}/0config/myCookies.js文件里获取${myCookies.length}个cookie====================`)
     CookieJDs = myCookies
-  } 
+  }
 }
 
 if (JSON.stringify(process.env).indexOf('GITHUB') > -1) {
@@ -46,7 +46,7 @@ if (JSON.stringify(process.env).indexOf('GITHUB') > -1) {
 CookieJDs = [...new Set(CookieJDs.filter(item => !!item))]
 let allCookie = CookieJDs
 
-console.log('jdCookie.js >> process.env.RUN_COOKIE_ARR=',process.env.RUN_COOKIE_ARR)
+console.log('jdCookie.js >> process.env.RUN_COOKIE_ARR=', process.env.RUN_COOKIE_ARR)
 let thisCookies = ''
 try {
   if (process.env.RUN_COOKIE_ARR) {
@@ -57,7 +57,7 @@ try {
 }
 //  thisCookies = [37,38]
 let count = 0;
-if(Array.isArray(thisCookies)&&thisCookies.length>0){
+if (Array.isArray(thisCookies) && thisCookies.length > 0) {
   for (let j = 0; j < thisCookies.length; j++) {
     let i = thisCookies[j]
     if (i >= CookieJDs.length) { break; }
@@ -67,11 +67,11 @@ if(Array.isArray(thisCookies)&&thisCookies.length>0){
     exports['CookieJD' + index] = CookieJDs[i].trim();
     count++;
   }
-}else{
+} else {
   process.env.COOKE_INDEX && console.log('process.env.COOKE_INDEX=', process.env.COOKE_INDEX)
-  
-  if (process.env.COOKE_INDEX && process.env.COOKE_INDEX.split('_').length == 2) {
-    let indexArr = process.env.COOKE_INDEX.split('_')
+
+  if (process.env.COOKE_INDEX && process.env.COOKE_INDEX.split('-').length == 2) {
+    let indexArr = process.env.COOKE_INDEX.split('-')
     let startIndex = indexArr[0]
     let endIndex = indexArr[1]
     CookieJDs = CookieJDs.slice(startIndex, endIndex)

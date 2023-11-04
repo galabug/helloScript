@@ -24,11 +24,12 @@ console.log('jd_runFixedCookie.js::', `fileName=${fileName}, fixedCookies=${fixe
       console.log('第2个参数fixedCookies 格式有误 = ' + fixedCookies)
       return
     }
+
   } catch (error) {
     console.error(error)
   }
 
-  let codeScript = 'node ' + fileName
+  let codeScript = 'node  ' + fileName
   await runScript(codeScript)
 })();
 
