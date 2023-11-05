@@ -60,7 +60,7 @@ console.log(`fileName=${fileName}, onceRunNum=${onceRunNum}, thisTime=${thisTime
     }
     let codeScript = 'node  ' + fileName
     await runScript(codeScript)
-    await sleep()
+    await sleep(thisTime)
   }
   // let codeScript = 'node  ' + __dirname + '\\' + fileName
 })();
@@ -69,7 +69,7 @@ console.log(`fileName=${fileName}, onceRunNum=${onceRunNum}, thisTime=${thisTime
 async function sleep(timeout) {
   // showTimeCount(timeout / 1000, timeout / 1000);
   console.log('睡眠' + timeout + '分钟')
-  return new Promise((resolve) => setTimeout(resolve, thisTime * 60 * 1000));
+  return new Promise((resolve) => setTimeout(resolve, timeout * 60 * 1000));
 }
 
 
