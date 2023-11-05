@@ -60,7 +60,9 @@ console.log(`fileName=${fileName}, onceRunNum=${onceRunNum}, thisTime=${thisTime
     }
     let codeScript = 'node  ' + fileName
     await runScript(codeScript)
-    await sleep(thisTime)
+    if (index < CookieJDs.length - 1) {
+      await sleep(thisTime)
+    }
   }
   // let codeScript = 'node  ' + __dirname + '\\' + fileName
 })();
