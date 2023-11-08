@@ -35,7 +35,7 @@ task galabug_helloScript_main/jd_runFixedCookie.js jd_jrsign 0-9
 task galabug_helloScript_main/jd_runFixedCookie.js jd_jrsign 10-19
 task galabug_helloScript_main/jd_runFixedCookie.js jd_jrsign 20-29
 
-#### jd_car_exc  头文字J兑换
+#### jd_car_exc  头文字J兑换 
 0 10 * * *
 头文字J兑换1000京豆
 头文字J兑换500京豆
