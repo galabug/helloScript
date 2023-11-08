@@ -2,6 +2,9 @@
 
 format on save
 
+
+ql repo https://github.com/galabug/helloScript.git "^jd_|^jx_|^gua_|^wskey" "activity|backUp" "^jd|^USER|^TS|sendNotify|h5st|js|py|ts|function|utils" "main"
+
 ### jd_runFileWithParam
 task galabug_helloScript_main/jd_runFileWithParam.js
 
