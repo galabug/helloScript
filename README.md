@@ -3,6 +3,8 @@
 format on save
 
 
+ql repo https://github.com/galabug/helloScript.git "^jd_showCookie" "activity|backUp" "^jd|^USER|^TS|sendNotify|h5st|js|py|ts|function|utils" "main"
+
 ql repo https://github.com/galabug/helloScript.git "^jd_|^jx_|^gua_|^wskey" "activity|backUp" "^jd|^USER|^TS|sendNotify|h5st|js|py|ts|function|utils" "main"
 
 ql repo https://github.com/miantj/jd_Scripts.git "jd_|jx_|jddj_|ql|gua_|getJDCookie|wskey" "activity|backUp" "^jd[^_]|USER|utils|function|sign|sendNotify|ql|JDJR" "main"
@@ -48,17 +50,18 @@ task galabug_helloScript_main/jdRunCookiesInterval.js jd_dwapp 8 60
 task galabug_helloScript_main/jdRunFileWithParam.js
 jdRunFileWithParam.js jd_car_exc.js jd_car_play_exchangeid 10082bd15b4707
 #### 3.1 jd_car_exc  头文字J兑换 
-0 10 * * *
+
 头文字J兑换1000京豆
+0 10 20-31 * *
 头文字J兑换500京豆
 头文字J兑换50京豆
 头文字J兑换20京豆
 头文字J兑换5京豆
-
-task galabug_helloScript_main/jdRunFileWithParam.js jd_car_exc.js jd_car_play_exchangeid 10082bd15b4707 0-4
-task galabug_helloScript_main/jdRunFileWithParam.js jd_car_exc.js jd_car_play_exchangeid 10082bd15b4706 1-4
+0 10 * * *
+task galabug_helloScript_main/jdRunFileWithParam.js jd_car_exc.js jd_car_play_exchangeid 10082bd15b4707 0-1
+task galabug_helloScript_main/jdRunFileWithParam.js jd_car_exc.js jd_car_play_exchangeid 10082bd15b4706 0-1
 task galabug_helloScript_main/jdRunFileWithParam.js jd_car_exc.js jd_car_play_exchangeid 10082bd15b4705 0-4
-task galabug_helloScript_main/jdRunFileWithParam.js jd_car_exc.js jd_car_play_exchangeid 10082bd15b4704 1-10
+task galabug_helloScript_main/jdRunFileWithParam.js jd_car_exc.js jd_car_play_exchangeid 10082bd15b4704 0-10
 task galabug_helloScript_main/jdRunFileWithParam.js jd_car_exc.js jd_car_play_exchangeid 10082bd15b4703 
 
 
