@@ -13,6 +13,7 @@ ql repo https://github.com/miantj/jd_Scripts.git "jd_|jx_|jddj_|ql|gua_|getJDCoo
 ql repo https://git.metauniverse-cn.com/https://github.com/shufflewzc/faker3.git "jd_|jx_|gua_|jddj_|jdCookie" "activity|backUp" "^jd[^_]|USER|function|utils|sendNotify|ZooFaker_Necklace.js|JDJRValidator_|sign_graphics_validate|ql|JDSignValidator|magic|depend|h5sts" "main"
 
 
+task <file_path> desi <env_name> <account_number>      
 
 
 # 1 jdRunFixedCookie
@@ -21,7 +22,7 @@ task galabug_helloScript_main/jdRunFixedCookie.js
 1 10 * * *
 1 13 * * *
 1 16 * * *
-<!-- task galabug_helloScript_main/jdRunFixedCookie.js jd_jrsign 0-9 -->
+  task galabug_helloScript_main/jdRunFixedCookie.js jd_dwapp 10-19
 <!-- task galabug_helloScript_main/jdRunFixedCookie.js jd_jrsign 10-19 -->
 <!-- task galabug_helloScript_main/jdRunFixedCookie.js jd_jrsign 20-29 -->
 
