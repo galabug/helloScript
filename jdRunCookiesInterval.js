@@ -43,10 +43,11 @@ console.log(
   }
   console.log("CookieJDs.length", CookieJDs.length);
   let count1 = 0;
-  for (let index = 1; index < CookieJDs.length; index = index + onceRunNum) {
+  for (let index = 0; index < CookieJDs.length; index = index + onceRunNum) {
     count1++;
     if (runType == "RUN_COOKIE_ARR") {
       let indexArr = [];
+      index = index === 0 ? 1 : index;
       for (let i = index; i < index + onceRunNum; i++) {
         indexArr.push(i);
       }
