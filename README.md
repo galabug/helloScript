@@ -63,7 +63,7 @@ task galabug_helloScript_main/jdRunFileWithParam.js jd_car_exc.js jd_car_play_ex
 task galabug_helloScript_main/jdRunFileWithParam.js jd_car_exc.js jd_car_play_exchangeid 10082bd15b4706 0-1
 task galabug_helloScript_main/jdRunFileWithParam.js jd_car_exc.js jd_car_play_exchangeid 10082bd15b4705 0-4
 task galabug_helloScript_main/jdRunFileWithParam.js jd_car_exc.js jd_car_play_exchangeid 10082bd15b4704 0-10
-task galabug_helloScript_main/jdRunFileWithParam.js jd_car_exc.js jd_car_play_exchangeid 10082bd15b4703 
+task galabug_helloScript_main/jdRunFileWithParam.js jd_car_exc.js jd_car_play_exchangeid 10082bd15b4703 0-25
 
 
 
