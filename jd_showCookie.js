@@ -93,7 +93,7 @@ if (process.env.JD_COOKIE) {
   // cookiesArr = resultCookies
 
   console.log(resultCookies)
-  console.log(`cookie总数${cookiesArr.length+1}个,有效${resultCookies.length+1}个,失效${cookiesArr.length-resultCookies.length}个`)
+  console.log(`cookie总数${cookiesArr.length}个,有效${resultCookies.length}个,失效${cookiesArr.length-resultCookies.length}个`)
 
 })()
     .catch((e) => {
