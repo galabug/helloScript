@@ -64,7 +64,7 @@ async function runScript(codeScript, startIndex) {
       error && console.log(`error: ${error}`);
       stderr && console.log(`stderr: ${stderr}`);
       let lastIndex = getRunIndex(stdout);
-      cursorIndex += lastIndex;
+      cursorIndex += lastIndex - 1;
       await runScript(codeScript, cursorIndex);
       resolve();
     });
