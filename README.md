@@ -66,6 +66,10 @@ task galabug_helloScript_main/jdRunFileWithParam.js jd_car_exc.js jd_car_play_ex
 task galabug_helloScript_main/jdRunFileWithParam.js jd_car_exc.js jd_car_play_exchangeid 10082bd15b4703 0-25
 
 
+# 4 jdRunFcwbHelp
+淘金助力fcwb_help
+task galabug_helloScript_main/jdRunFcwbHelp.js jd_fcwb_help.js
+10 10 * * *
 
 
 
