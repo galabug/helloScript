@@ -25,6 +25,10 @@ task galabug_helloScript_main/jdRunFixedCookie.js
   task galabug_helloScript_main/jdRunFixedCookie.js jd_dwapp 10-19
 <!-- task galabug_helloScript_main/jdRunFixedCookie.js jd_jrsign 10-19 -->
 <!-- task galabug_helloScript_main/jdRunFixedCookie.js jd_jrsign 20-29 -->
+zzhb提现
+  task galabug_helloScript_main/jdRunFixedCookie.js jd_zzhb1 0-1
+5/* 11-12 * * *
+
 
 
 # 2 jdRunCookiesInterval
