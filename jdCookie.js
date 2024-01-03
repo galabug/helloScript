@@ -90,10 +90,17 @@ if (Array.isArray(thisCookies) && thisCookies.length > 0) {
     process.env.COOKE_INDEX.split("-").length == 2
   ) {
     let indexArr = process.env.COOKE_INDEX.split("-");
-    let startIndex = indexArr[0];
-    let endIndex = indexArr[1];
+    let startIndex = parseInt(indexArr[0]);
+    let endIndex = parseInt(indexArr[1]);
     CookieJDs = CookieJDs.slice(startIndex, endIndex + 1);
-    console.log("跑cookie->[", startIndex, "-", endIndex, "]");
+    console.log(
+      "跑cookie->[",
+      startIndex,
+      "-",
+      endIndex,
+      "]",
+      CookieJDs.length
+    );
   }
   // let ccArr = []
   for (let i = 0; i < CookieJDs.length; i++) {
