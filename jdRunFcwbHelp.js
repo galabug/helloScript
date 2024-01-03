@@ -29,6 +29,7 @@ if (process.env.JD_COOKIE) {
 let ckAllLength = CookieJDs.length;
 console.log("cklength = ", ckAllLength);
 let firstIndex = 0;
+let cursorIndex = 0;
 
 (async () => {
   // process.env.COOKE_INDEX = fixedCookies;
@@ -63,7 +64,8 @@ async function runScript(codeScript, startIndex) {
       error && console.log(`error: ${error}`);
       stderr && console.log(`stderr: ${stderr}`);
       let lastIndex = getRunIndex(stdout);
-      await runScript(codeScript, lastIndex);
+      cursorIndex += lastIndex;
+      await runScript(codeScript, cursorIndex);
       resolve();
     });
   });
