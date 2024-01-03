@@ -92,12 +92,12 @@ function getRunIndex(stdout) {
   let lastIndex = "";
   // 使用正则表达式的全局搜索和lastIndex属性来找到最后一个匹配项
   while ((matches = regex.exec(stdout)) !== null) {
-    console.log(matches[0], matches[1]);
+    // console.log(matches[0], matches[1]);
     lastIndex = matches[1];
     // 由于我们使用了全局搜索(g标志)，每次调用exec()都会从lastIndex位置开始搜索
     // 当循环结束时，matches将包含最后一个匹配项的信息
   }
-  console.log("没有找到匹配项");
+  console.log("匹配项=", lastIndex);
 
   return lastIndex;
 }
