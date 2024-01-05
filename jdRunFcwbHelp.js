@@ -65,9 +65,9 @@ async function runScript(codeScript, startIndex) {
       stderr && console.log(`stderr: ${stderr}`);
       let lastIndex = getRunIndex(stdout);
 
-      if (firstIndex == 0) {
+      if (firstIndex == 1) {
         cursorIndex = lastIndex;
-      } else if (firstIndex == 1) {
+      } else if (firstIndex == 2) {
         cursorIndex += lastIndex - 2;
       } else {
         cursorIndex += lastIndex - 1;
