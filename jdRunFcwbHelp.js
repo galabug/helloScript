@@ -47,7 +47,7 @@ async function runScript(codeScript, startIndex) {
     return;
   }
   if (startIndex >= ckAllLength) {
-    console.log("startIndex >= ckAllLength");
+    console.log("startIndex >= ckAllLength",startIndex,ckAllLength);
     return;
   }
   let indexArr = getRunArr(startIndex, ckAllLength);
