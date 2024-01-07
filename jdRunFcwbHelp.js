@@ -47,7 +47,7 @@ async function runScript(codeScript, startIndex) {
     return;
   }
   if (startIndex >= ckAllLength) {
-    console.log("startIndex >= ckAllLength",startIndex,ckAllLength);
+    console.log("startIndex >= ckAllLength",startIndex,ckAllLength,firstIndex,cursorIndex);
     return;
   }
   let indexArr = getRunArr(startIndex, ckAllLength);
@@ -66,7 +66,7 @@ async function runScript(codeScript, startIndex) {
       let lastIndex = getRunIndex(stdout);
 
       if (firstIndex == 1) {
-        cursorIndex = lastIndex;
+        cursorIndex += lastIndex;
       } else if (firstIndex == 2) {
         cursorIndex += lastIndex - 2;
       } else {
