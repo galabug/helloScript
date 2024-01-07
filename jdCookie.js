@@ -66,7 +66,7 @@ try {
 let count = 0;
 if (Array.isArray(thisCookies) && thisCookies.length > 0) {
   for (let j = 0; j < thisCookies.length; j++) {
-    let i = thisCookies[j];
+    let i = parseInt(thisCookies[j]);
     if (i >= CookieJDs.length) {
       break;
     }
