@@ -38,6 +38,7 @@ let cursorIndex = 0;
 })();
 
 async function runScript(codeScript, startIndex) {
+  if (startIndex) {startIndex=parseInt(startIndex)}
   if (ckAllLength === 0) {
     console.log("ckAllLength === 0");
     return;
@@ -66,11 +67,11 @@ async function runScript(codeScript, startIndex) {
       let lastIndex = getRunIndex(stdout);
 
       if (firstIndex == 1) {
-        cursorIndex += lastIndex;
+        cursorIndex += parseInt(lastIndex);
       } else if (firstIndex == 2) {
-        cursorIndex += lastIndex - 2;
+        cursorIndex += parseInt(lastIndex - 2);
       } else {
-        cursorIndex += lastIndex - 1;
+        cursorIndex += parseInt(lastIndex - 1);
       }
       await runScript(codeScript, cursorIndex);
       resolve();
@@ -100,7 +101,7 @@ function getRunIndex(stdout) {
   // 使用正则表达式的全局搜索和lastIndex属性来找到最后一个匹配项
   while ((matches = regex.exec(stdout)) !== null) {
     // console.log(matches[0], matches[1]);
-    lastIndex = matches[1];
+    lastIndex = parseInt(matches[1]);
     // 由于我们使用了全局搜索(g标志)，每次调用exec()都会从lastIndex位置开始搜索
     // 当循环结束时，matches将包含最后一个匹配项的信息
   }
