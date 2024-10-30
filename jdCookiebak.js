@@ -1,13 +1,19 @@
+const path = require('path')
+const root = path.resolve(__dirname, './')
+
+const dirPath = path.resolve(__dirname, './')
+// const parentDir = path.parse(dirPath).dir
+const dirName = path.parse(dirPath).name
+
 /*
 此文件为Node.js专用。其他用户请忽略
  */
 //此处填写京东账号cookie。
+let myCookies = ''
+
 let CookieJDs = [
-  // '',
-  // '', //账号二ck,例:pt_key=XXX;pt_pin=XXX;如有更多,依次类推
+  '', //账号一ck,例:pt_key=XXX;pt_pin=XXX;
 ]
-let IP = ''
-// 判断环境变量里面是否有京东ck
 if (process.env.JD_COOKIE) {
   if (process.env.JD_COOKIE.indexOf('&') > -1) {
     CookieJDs = process.env.JD_COOKIE.split('&')
@@ -28,6 +34,7 @@ if (process.env.JD_COOKIE) {
     CookieJDs = myCookies
   }
 }
+
 if (JSON.stringify(process.env).indexOf('GITHUB') > -1) {
   console.log(`请勿使用github action运行此脚本,无论你是从你自己的私库还是其他哪里拉取的源代码，都会导致我被封号\n`)
   !(async () => {
@@ -84,21 +91,6 @@ if (Array.isArray(thisCookies) && thisCookies.length > 0) {
 }
 
 console.log(`========= 获取${count}/${allCookie.length}个京东账号Cookie ========= `)
-
-let permit = process.env.PERMIT_JS ? process.env.PERMIT_JS.split('&') : ''
-
-if (process.env.DP_POOL) {
-  if (permit && permit.filter((x) => process.mainModule.filename.includes(x)).length != 0) {
-    try {
-      require('global-agent/bootstrap')
-      global.GLOBAL_AGENT.HTTP_PROXY = process.env.DP_POOL
-      console.log(`\n---------------使用代理池模式---------------\n`)
-    } catch {
-      throw new Error(`请安装global-agent依赖，才能启用代理！`)
-    }
-  } else {
-  }
-}
 
 function getIP() {
   const https = require('https')
@@ -223,13 +215,4 @@ let nameConfig = process.env.ShareCodeConfigName
 let envName = process.env.ShareCodeEnvName
 if (nameChinese && nameConfig && envName) {
   SetShareCodesEnv(nameChinese, nameConfig, envName)
-}
-function formatdate(date) {
-  const year = date.getFullYear()
-  const month = ('0' + (date.getMonth() + 1)).slice(-2)
-  const day = ('0' + date.getDate()).slice(-2)
-  const hours = ('0' + date.getHours()).slice(-2)
-  const minutes = ('0' + date.getMinutes()).slice(-2)
-  const seconds = ('0' + date.getSeconds()).slice(-2)
-  return `${year}/${month}/${day} ${hours}:${minutes}:${seconds}`
 }
